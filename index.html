@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>The Mining Lab | Rators Club Platinum</title>
+    <title>The Mining Lab | by Rators Team</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Plus+Jakarta+Sans:wght@300;400;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
@@ -11,11 +11,11 @@
 
     <style>
         /* ========================================
-           SISTEMA DE DISEÑO: MINING PLATINUM
+           SISTEMA DE DISEÑO: CYBER-LUXE PLATINUM
            ======================================== */
         :root {
             --bg: #ffffff;
-            --header-bg: rgba(255, 255, 255, 0.85);
+            --header-bg: rgba(255, 255, 255, 0.9);
             --card-bg: #fdfdfd;
             --text-main: #0f172a;
             --text-muted: #64748b;
@@ -24,7 +24,7 @@
             --accent: #06b6d4;
             --border: #f1f5f9;
             --shadow: 0 20px 50px rgba(0,0,0,0.05);
-            --neon-glow: 0 0 25px rgba(16, 185, 129, 0.2);
+            --glow: 0 0 25px rgba(16, 185, 129, 0.2);
         }
 
         .dark-mode {
@@ -37,43 +37,43 @@
             --secondary: #a78bfa;
             --border: #1e293b;
             --shadow: 0 30px 60px rgba(0,0,0,0.6);
-            --neon-glow: 0 0 35px rgba(52, 211, 153, 0.3);
+            --glow: 0 0 35px rgba(52, 211, 153, 0.3);
         }
 
-        /* --- Base & Animations --- */
+        /* --- Base & Reset --- */
         * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
         
         body { 
             font-family: 'Plus Jakarta Sans', sans-serif; 
             background: var(--bg); color: var(--text-main); 
-            margin: 0; transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            margin: 0; transition: all 0.5s ease;
             overflow-x: hidden; line-height: 1.6;
         }
 
-        /* Cuadrícula de Ingeniería Rators */
+        /* Cuadrícula de Ingeniería */
         body::before {
             content: ''; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background-image: radial-gradient(var(--border) 1.5px, transparent 1.5px);
             background-size: 40px 40px; opacity: 0.5; z-index: -1;
         }
 
-        /* --- Header Premium --- */
+        /* --- Header con Branding --- */
         header {
             padding: 1.2rem 3rem; display: flex; justify-content: space-between; align-items: center;
             background: var(--header-bg); backdrop-filter: blur(20px);
             position: sticky; top: 0; z-index: 2000; border-bottom: 2px solid var(--primary);
             box-shadow: var(--shadow);
         }
-        .header-left { display: flex; align-items: center; gap: 15px; text-decoration: none; }
+        .header-brand { display: flex; align-items: center; gap: 15px; text-decoration: none; color: inherit; }
         .logo-box {
-            width: 48px; height: 48px; background: var(--card-bg); 
+            width: 48px; height: 48px; background: var(--bg); 
             border: 2px solid var(--primary); border-radius: 14px;
             display: flex; align-items: center; justify-content: center;
-            box-shadow: var(--neon-glow);
+            box-shadow: var(--glow);
         }
         .logo-svg { width: 32px; fill: var(--primary); }
-        .brand-info b { font-family: 'Outfit', sans-serif; font-size: 1.4rem; color: var(--text-main); letter-spacing: 1px; }
-        .brand-info span { font-size: 0.75rem; font-weight: 800; color: var(--text-muted); text-transform: uppercase; display: block; }
+        .brand-text b { font-family: 'Outfit', sans-serif; font-size: 1.4rem; letter-spacing: 1px; }
+        .brand-text span { font-size: 0.75rem; font-weight: 800; color: var(--text-muted); text-transform: uppercase; display: block; }
 
         .theme-btn {
             background: var(--card-bg); border: 2px solid var(--border); width: 48px; height: 48px;
@@ -81,48 +81,37 @@
             display: flex; align-items: center; justify-content: center; font-size: 1.2rem;
             transition: 0.3s;
         }
-        .theme-btn:hover { border-color: var(--primary); transform: translateY(-3px); box-shadow: var(--neon-glow); }
+        .theme-btn:hover { border-color: var(--primary); transform: translateY(-3px); box-shadow: var(--glow); }
 
-        /* ========================================
-           CONTENIDO: MINING LAB
-           ======================================== */
+        /* --- Hero --- */
         .container { max-width: 1100px; margin: 0 auto; padding: 0 25px; }
-        
         .hero { padding: 8rem 2rem 4rem; text-align: center; }
         .hero h1 { font-size: clamp(2.5rem, 8vw, 5rem); font-weight: 800; margin: 0; letter-spacing: -3px; }
-        .hero h1 em { font-style: normal; color: var(--primary); text-shadow: var(--neon-glow); }
-        .hero p { font-size: 1.4rem; color: var(--text-muted); margin: 30px auto; max-width: 800px; }
-
-        .card-pro { 
-            background: var(--card-bg); border-radius: 50px; padding: 4rem; 
-            border: 2.5px solid var(--border); box-shadow: var(--shadow); 
-            margin-bottom: 3.5rem; position: relative; overflow: hidden;
-        }
+        .hero h1 em { font-style: normal; color: var(--primary); text-shadow: var(--glow); }
+        .hero p { font-size: 1.3rem; color: var(--text-muted); margin: 30px auto; max-width: 800px; }
 
         /* ========================================
-           RATORS CAROUSEL v2.0 (INTEGRADO)
+           RATORS CAROUSEL v3.0 (CORREGIDO)
            ======================================== */
-        .carousel-wrapper {
-            position: relative; margin: 3rem 0;
-            border-radius: 40px; overflow: hidden;
-            border: 5px solid var(--primary);
-            box-shadow: var(--neon-glow), 0 30px 60px rgba(0,0,0,0.1);
-            background: #000;
+        .carousel-outer {
+            margin: 3rem 0; border-radius: 45px; overflow: hidden;
+            border: 6px solid var(--primary);
+            box-shadow: var(--glow), 0 30px 60px rgba(0,0,0,0.1);
+            background: #000; position: relative;
         }
-        .carousel-container {
-            display: flex; transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
-            height: 500px;
+        .carousel-track {
+            display: flex; transition: transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+            height: 550px;
         }
         .carousel-slide {
             min-width: 100%; height: 100%; position: relative;
         }
         .carousel-slide img {
             width: 100%; height: 100%; object-fit: cover;
-            filter: brightness(0.9); transition: 0.5s;
+            transition: 0.5s;
         }
-        .carousel-slide:hover img { filter: brightness(1.1); }
-
-        /* Controles de Navegación */
+        
+        /* Controles */
         .nav-btn {
             position: absolute; top: 50%; transform: translateY(-50%);
             background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(10px);
@@ -132,59 +121,41 @@
             transition: 0.3s;
         }
         .nav-btn:hover { background: var(--primary); border-color: var(--primary); scale: 1.1; }
-        .prev-btn { left: 30px; }
-        .next-btn { right: 30px; }
+        .prev { left: 30px; }
+        .next { right: 30px; }
 
-        /* Indicadores */
-        .indicators {
+        .dots {
             position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%);
             display: flex; gap: 12px; z-index: 100;
         }
         .dot { width: 12px; height: 12px; background: rgba(255,255,255,0.3); border-radius: 50%; cursor: pointer; transition: 0.3s; }
-        .dot.active { background: var(--primary); width: 30px; border-radius: 10px; }
-
-        /* ========================================
-           TEORÍA: GAMIFICATION
-           ======================================== */
-        .theory-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 4rem; }
-        .theory-item { 
-            padding: 3rem; background: var(--bg); border: 1.5px solid var(--border); 
-            border-radius: 35px; transition: 0.4s;
-        }
-        .theory-item:hover { transform: translateY(-10px); border-color: var(--primary); box-shadow: var(--neon-glow); }
-        .theory-item i { font-size: 2.5rem; color: var(--primary); margin-bottom: 25px; display: block; }
-        .theory-item b { font-size: 1.4rem; display: block; margin-bottom: 10px; }
+        .dot.active { background: var(--primary); width: 35px; border-radius: 10px; }
 
         /* --- Footer --- */
         footer { 
-            padding: 10rem 2rem 5rem; border-top: 1px solid var(--border); 
+            padding: 8rem 2rem 5rem; border-top: 1px solid var(--border); 
             margin-top: 8rem; text-align: center; background: var(--card-bg);
         }
-        .footer-logo b { font-size: 2.5rem; letter-spacing: -1px; }
+        .footer-logo b { font-size: 2.2rem; letter-spacing: -1px; }
         .footer-logo b span { color: var(--primary); }
         
-        .license { margin-top: 80px; opacity: 0.5; font-size: 0.85rem; font-weight: 700; letter-spacing: 1.5px; }
+        .license { margin-top: 60px; opacity: 0.5; font-size: 0.85rem; font-weight: 700; letter-spacing: 1.5px; }
 
-        /* WhatsApp Action */
-        .wa-btn {
+        /* WhatsApp Bubble */
+        .wa-float {
             position: fixed; bottom: 50px; right: 50px; background: #25d366; color: white;
-            width: 85px; height: 85px; border-radius: 50%; display: flex; align-items: center;
+            width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center;
             justify-content: center; font-size: 45px; z-index: 3000; box-shadow: 0 25px 50px rgba(37, 211, 102, 0.4);
-            text-decoration: none; transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            text-decoration: none; transition: 0.4s;
         }
-        .wa-btn:hover { transform: scale(1.15) rotate(12deg); }
+        .wa-float:hover { transform: scale(1.15) rotate(12deg); }
 
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 3.5rem; }
-            .carousel-container { height: 300px; }
-            .card-pro { padding: 3rem 2rem; }
-        }
     </style>
 </head>
 <body onclick="unlockAudio()">
 
 <header>
-    <a href="#" class="header-left">
+    <a href="#" class="header-brand">
         <div class="logo-box">
             <svg class="logo-svg" viewBox="0 0 100 100">
                 <path d="M30 60 C30 40 45 35 55 35 C70 35 75 50 75 65 Q75 80 55 80 Q40 80 30 60" fill="none" stroke="currentColor" stroke-width="6"/>
@@ -192,7 +163,7 @@
                 <path d="M75 55 L85 60 L75 65 Z" fill="#f59e0b"/>
             </svg>
         </div>
-        <div class="brand-info">
+        <div class="brand-text">
             <b>THE MINING LAB</b>
             <span>by Rators Team</span>
         </div>
@@ -206,103 +177,96 @@
 
 <main class="container">
     <section class="hero">
-        <h1>Building <em>Gamified</em> Mastery</h1>
-        <p>Aprender inglés no tiene por qué ser estático. Usamos entornos virtuales como Minecraft para visualizar la arquitectura del lenguaje y el vocabulario en tiempo real.</p>
+        <h1>Engineering <em>Gamified</em> Mastery</h1>
+        <p>Si las imágenes no cargan, verifica que el archivo en Drive esté configurado como "Público" (Cualquier persona con el enlace).</p>
     </section>
 
-    <div class="card-pro">
-        <h2 style="font-size: 2.2rem; font-weight: 800; margin-bottom: 1rem;">Rators Showcase</h2>
-        <p>Explora nuestras capturas del servidor oficial donde practicamos preposiciones y construcción de oraciones complejas.</p>
-
-        <div class="carousel-wrapper">
-            <button class="nav-btn prev-btn" onclick="changeSlide(-1)">❮</button>
-            <button class="nav-btn next-btn" onclick="changeSlide(1)">❯</button>
-            
-            <div class="carousel-container" id="carousel">
-                <div class="carousel-slide"><img src="https://drive.google.com/uc?export=view&id=1-pjp0SL7BVleM7Us1ggAZsq2NV0hK03H" alt="Minecraft 1"></div>
-                <div class="carousel-slide"><img src="https://drive.google.com/uc?export=view&id=1Xqx2WYM7wKxc9t28mWNWxXWXatctKzkF" alt="Minecraft 2"></div>
-                <div class="carousel-slide"><img src="https://drive.google.com/uc?export=view&id=1_uYFmnzY0gBuVBu5HVVrxqMatSFMzrVM" alt="Minecraft 3"></div>
-                <div class="carousel-slide"><img src="https://drive.google.com/uc?export=view&id=1GDsihvTSsFQ5iJyUGfdoe73z5Nwl2uh5" alt="Minecraft 4"></div>
-                <div class="carousel-slide"><img src="https://drive.google.com/uc?export=view&id=1LQBUcZNOdb4SPKnAe6QfU63q6ylO8sa7" alt="Minecraft 5"></div>
+    <div class="carousel-outer">
+        <button class="nav-btn prev" onclick="moveSlide(-1)">❮</button>
+        <button class="nav-btn next" onclick="moveSlide(1)">❯</button>
+        
+        <div class="carousel-track" id="track">
+            <div class="carousel-slide">
+                <img src="https://drive.google.com/thumbnail?id=1-pjp0SL7BVleM7Us1ggAZsq2NV0hK03H&sz=w1200" alt="Minecraft Slide 1">
             </div>
-
-            <div class="indicators" id="dots">
-                <div class="dot active" onclick="jumpToSlide(0)"></div>
-                <div class="dot" onclick="jumpToSlide(1)"></div>
-                <div class="dot" onclick="jumpToSlide(2)"></div>
-                <div class="dot" onclick="jumpToSlide(3)"></div>
-                <div class="dot" onclick="jumpToSlide(4)"></div>
+            <div class="carousel-slide">
+                <img src="https://drive.google.com/thumbnail?id=1Xqx2WYM7wKxc9t28mWNWxXWXatctKzkF&sz=w1200" alt="Minecraft Slide 2">
+            </div>
+            <div class="carousel-slide">
+                <img src="https://drive.google.com/thumbnail?id=1_uYFmnzY0gBuVBu5HVVrxqMatSFMzrVM&sz=w1200" alt="Minecraft Slide 3">
+            </div>
+            <div class="carousel-slide">
+                <img src="https://drive.google.com/thumbnail?id=1GDsihvTSsFQ5iJyUGfdoe73z5Nwl2uh5&sz=w1200" alt="Minecraft Slide 4">
+            </div>
+            <div class="carousel-slide">
+                <img src="https://drive.google.com/thumbnail?id=1LQBUcZNOdb4SPKnAe6QfU63q6ylO8sa7&sz=w1200" alt="Minecraft Slide 5">
             </div>
         </div>
 
-        <div class="theory-grid">
-            <div class="theory-item">
-                <i class="fas fa-cubes"></i>
-                <b>Immersion Mode</b>
-                <p>Navegar mundos digitales te obliga a usar el inglés funcional para sobrevivir y construir.</p>
-            </div>
-            <div class="theory-item">
-                <i class="fas fa-brain"></i>
-                <b>Visual Memory</b>
-                <p>Asociar un objeto 3D con su nombre en inglés acelera la retención a largo plazo.</p>
-            </div>
+        <div class="dots" id="dotGroup">
+            <div class="dot active" onclick="gotoSlide(0)"></div>
+            <div class="dot" onclick="gotoSlide(1)"></div>
+            <div class="dot" onclick="gotoSlide(2)"></div>
+            <div class="dot" onclick="gotoSlide(3)"></div>
+            <div class="dot" onclick="gotoSlide(4)"></div>
         </div>
     </div>
 </main>
 
 <footer>
     <div class="footer-logo"><b>RATORS<span>CLUB</span></b></div>
-    <p style="font-weight: 700; color: var(--text-muted); margin-top: 15px;">
-        Teacher Netza Varo | Lic. en Ciencias de la Educación | Certificado TOEFL
-    </p>
-    
     <div class="license">
         © 2026 RATORS TEAM | ALL RIGHTS RESERVED<br>
-        Licensed under GNU GPL v3.0 | Tepic, Nayarit
+        Licensed under GNU GPL v3.0 | by Rators Team
     </div>
 </footer>
 
-<a href="https://wa.me/523231116425?text=Hola%20Teacher%20Netza%2C%20me%20gustar%C3%ADa%20recibir%20informaci%C3%B3n%20sobre%20tus%20clases%20y%20paquetes." class="wa-btn" target="_blank">
+<a href="https://wa.me/523231116425?text=Hola%20Teacher%20Netza%2C%20me%20gustar%C3%ADa%20recibir%20informaci%C3%B3n%20sobre%20tus%20clases%20y%20paquetes." class="wa-float" target="_blank">
     <i class="fab fa-whatsapp"></i>
 </a>
 
 <script>
     /* --- ENGINE: THEME --- */
     function toggleTheme() {
-        const body = document.body;
+        document.body.classList.toggle('dark-mode');
         const btn = document.getElementById('themeTrigger');
-        body.classList.toggle('dark-mode');
-        btn.innerHTML = body.classList.contains('dark-mode') ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+        btn.innerHTML = document.body.classList.contains('dark-mode') ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
     }
 
     /* --- ENGINE: CAROUSEL --- */
-    let currentIdx = 0;
-    const slides = document.querySelectorAll('.carousel-slide');
+    let index = 0;
+    const track = document.getElementById('track');
     const dots = document.querySelectorAll('.dot');
-    const container = document.getElementById('carousel');
+    const totalSlides = 5;
 
-    function updateCarousel() {
-        container.style.transform = `translateX(-${currentIdx * 100}%)`;
+    function update() {
+        track.style.transform = `translateX(-${index * 100}%)`;
         dots.forEach(d => d.classList.remove('active'));
-        dots[currentIdx].classList.add('active');
+        dots[index].classList.add('active');
     }
 
-    function changeSlide(dir) {
-        currentIdx = (currentIdx + dir + slides.length) % slides.length;
-        updateCarousel();
+    function moveSlide(step) {
+        index = (index + step + totalSlides) % totalSlides;
+        update();
     }
 
-    function jumpToSlide(idx) {
-        currentIdx = idx;
-        updateCarousel();
+    function gotoSlide(n) {
+        index = n;
+        update();
     }
 
-    // Auto-play opcional
-    setInterval(() => changeSlide(1), 5000);
+    // Auto-advance
+    let timer = setInterval(() => moveSlide(1), 5000);
 
-    /* --- AUDIO UNLOCK --- */
-    let audioUnlocking = false;
-    function unlockAudio() { if(!audioUnlocking) { window.speechSynthesis.speak(new SpeechSynthesisUtterance("")); audioUnlocking = true; } }
+    // Reiniciar timer si el usuario interactúa
+    function resetTimer() {
+        clearInterval(timer);
+        timer = setInterval(() => moveSlide(1), 5000);
+    }
+
+    /* --- AUDIO --- */
+    let unlocked = false;
+    function unlockAudio() { if(!unlocked) { window.speechSynthesis.speak(new SpeechSynthesisUtterance("")); unlocked = true; } resetTimer(); }
 </script>
 
 </body>
